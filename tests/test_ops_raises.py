@@ -72,7 +72,7 @@ def test_divide_exceptions(x, y, expected_message):
 @pytest.mark.parametrize(
     "x,y,op,expected_message",
     [
-        (1, 0, "poop", "Unsupported operation type"),
+        (1, 0, "poop", "poop -> Unsupported operation type"),
     ],
 )
 def test_perform_op_exceptions(x, y, op, expected_message):
