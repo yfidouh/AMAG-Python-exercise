@@ -19,7 +19,6 @@ def apply_op(x):
     except Exception as e:
         # maybe log e?
         return str(e)
-    return None
 
 
 def process(fname, sheet_name=None):
