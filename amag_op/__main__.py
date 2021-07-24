@@ -1,6 +1,6 @@
 import warnings
 import sys
-from amag_op.cli import cli
+from amag_op.cli.cli import cli
 
 warnings.simplefilter(action="ignore", category=FutureWarning)
 

@@ -1,6 +1,6 @@
 import pytest
 
-from amag_op.ops import add, subtract, expo, multiply, divide, perform_op
+from amag_op.helpers.ops import add, subtract, expo, multiply, divide, perform_op
 
 
 @pytest.mark.parametrize(

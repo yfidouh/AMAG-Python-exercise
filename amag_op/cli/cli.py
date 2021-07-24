@@ -1,8 +1,8 @@
 import argparse
 import sys
 
-from amag_op.amag_op import process
-from amag_op.ops import perform_op
+from amag_op.helpers.amag_op import process
+from amag_op.helpers.ops import perform_op
 
 
 def call_func(args):

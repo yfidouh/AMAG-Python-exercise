@@ -1,5 +1,5 @@
-from amag_op.helpers import load_file, save_file
-from amag_op.ops import perform_op
+from amag_op.helpers.helpers import load_file, save_file
+from amag_op.helpers.ops import perform_op
 
 import pandas as pd
 
