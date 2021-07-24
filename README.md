@@ -19,7 +19,8 @@ you can access the options using --help
 
 run `python -m amag_op --help`
 
-`usage: amag_op [-h] {process,operate} ...
+```
+usage: amag_op [-h] {process,operate} ...
 
 Process some floats.
 
@@ -29,11 +30,37 @@ process process an excel or csv file with x, y and operation columns
 operate perform an operation on x and y
 
 optional arguments:
--h, --help show this help message and exit`
+-h, --help show this help message and exit
+```
 
 ## Tests
 
 run `pytest --cov=tests/ -v` to run tests and check coverage
+
+## Structure
+
+```
+.
+├───── amag_op
+│    ├───── cli
+│    │    └───── cli.py
+│    │────── exceptions
+│    │    ├───── file_type_errors.py
+│    │    ├───── op_type_errors.py
+│    │    ├───── type_errors.py
+│    │    └───── __init__.py
+│    ├───── helpers
+│    │    ├───── amag_op.py
+│    │    ├───── helpers.py
+│    │    └───── ops.py
+│    ├───── __init__.py
+│    └───── __main__.py
+├───── tests
+│    ├───── test_cli.py
+│    ├───── test_ops.py
+│    └───── test_ops_raises.py
+└────── README.md
+```
 
 # TODO
 
