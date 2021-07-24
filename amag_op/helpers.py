@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-from amag_op.exceptions.file_type_error import FileTypeError, FileDoesNotExistError
+from .exceptions.file_type_error import FileTypeError, FileDoesNotExistError
 
 
 def load_file(fname, sheet_name=None):

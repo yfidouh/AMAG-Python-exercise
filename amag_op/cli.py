@@ -31,7 +31,9 @@ def create_cli_parser():
 
 def cli(args):
     parser = create_cli_parser()
-    args = parser.parse_args(args)
-    args = parser
-    print(args)
+    if len(args) > 0:
+        args = parser.parse_args(args)
+    else:
+        # to display the script options when no arguments have been provided
+        args = parser.parse_args(["--help"])
     return args
