@@ -1,5 +1,8 @@
+import warnings
 import sys
-from .cli import cli
+from amag_op.cli import cli
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
 
 
 def main(args):
@@ -7,5 +10,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    print("in main")
-    main(sys.argv[1:])
+    try:
+        main(sys.argv[1:])
+    except Exception as e:
+        print(e)

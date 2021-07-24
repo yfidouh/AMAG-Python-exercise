@@ -1,2 +1,4 @@
 /~$thon Developer Assignment.docx
 .env
+.vscode
+.pytest_cache

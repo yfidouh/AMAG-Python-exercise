@@ -8,6 +8,8 @@ pytest = "*"
 pandas = "*"
 coverage = "*"
 pytest-cov = "*"
+openpyxl = "*"
+xlsxwriter = "*"
 
 [dev-packages]
 black = "*"

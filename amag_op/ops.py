@@ -1,15 +1,20 @@
-# TODO define custom exception types.
+from amag_op.exceptions.type_errors import NotFloatError
+from amag_op.exceptions.op_type_errors import (
+    CannotDivideByZeroError,
+    UndefinedExpoError,
+    UnsupportedOpError,
+)
 
 
 def check_for_float(*args):
     for arg in args:
         if not isinstance(arg, float) and not isinstance(arg, int):
-            raise Exception(f"{arg} is not a float")
+            raise NotFloatError(arg)
 
 
 def check_for_divide_by_zero(x):
     if x == 0:
-        raise Exception("Cannot divide by zero")
+        raise CannotDivideByZeroError()
 
 
 def add(x, y):
@@ -25,7 +30,7 @@ def subtract(x, y):
 def expo(x, y):
     check_for_float(x, y)
     if x == y == 0:
-        raise Exception("0^0 undefined or something")
+        raise UndefinedExpoError()
     return x ** y
 
 
@@ -50,6 +55,6 @@ def perform_op(x, y, op):
     }
 
     if op not in ops:
-        raise Exception("Unsupported operation type")
+        raise UnsupportedOpError(op)
 
     return ops[op](x, y)
