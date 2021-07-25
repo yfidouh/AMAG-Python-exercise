@@ -1,5 +1,11 @@
 # AMAG Technical Question
 
+A simple project to showcase a potential solution to setting up a production ready project.
+
+The project aims to create a command line interface that allows the user to perform an operation on two numbers.
+
+The input can be either a csv or excel file, or the numbers that the user wishes to perform an operation on.
+
 ## Setup
 
 Using pipenv, install packages by running `pipenv install` (if you don't have pipenv, you can install it by running `pip install pipenv`)
@@ -207,6 +213,7 @@ The main benefits are the following:
 
 # TODO
 
+- Add setup installer
 - Cover all functions with tests
 - Add logging
 - Add special log messages in the custom exceptions
