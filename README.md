@@ -96,6 +96,7 @@ division(100.0, 5.0) = 20.0
 
 ## Frameworks and Libraries used
 
+- pipenv (for setting up the virtual environment and installing packages)
 - pytest (for writing unit tests)
 - argparse (for writing the command line interface)
 - pandas (for dealing with data frames), this library relies on openpyxl.
