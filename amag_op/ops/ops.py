@@ -6,10 +6,14 @@ from amag_op.exceptions.op_type_errors import (
 )
 
 
-def check_for_float(*args):
-    for arg in args:
-        if not isinstance(arg, float) and not isinstance(arg, int):
-            raise NotFloatError(arg)
+def check_for_float(func):
+    def wrapper(*args, **kwargs):
+        for arg in args:
+            if not isinstance(arg, float) and not isinstance(arg, int):
+                raise NotFloatError(arg)
+        return func(*args, **kwargs)
+
+    return wrapper
 
 
 def check_for_divide_by_zero(x):
@@ -17,30 +21,30 @@ def check_for_divide_by_zero(x):
         raise CannotDivideByZeroError()
 
 
+@check_for_float
 def add(x, y):
-    check_for_float(x, y)
     return x + y
 
 
+@check_for_float
 def subtract(x, y):
-    check_for_float(x, y)
     return x - y
 
 
+@check_for_float
 def expo(x, y):
-    check_for_float(x, y)
     if x == y == 0:
         raise UndefinedExpoError()
     return x ** y
 
 
+@check_for_float
 def multiply(x, y):
-    check_for_float(x, y)
     return x * y
 
 
+@check_for_float
 def divide(x, y):
-    check_for_float(x, y)
     check_for_divide_by_zero(y)
     return x / y
 
