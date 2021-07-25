@@ -178,24 +178,24 @@ The command line interface module handles the arguments passed in when running t
   - I can test this module independently of running the script, as it only handles parsing arguments.
   - More work can be done to completely decouple the cli from the business logic.
 - Ease of replacement/substitution:
-  - At the moment, the main function just calls the cli function. however, it can be set up in the future to call a different cli function, or a gui function for example.
+  - At the moment, the main function just calls the cli function. However, it can be set up in the future to call a different cli function, or a gui function for example.
 - The main function is the glue that connects the user interface to the business logic.
 
 Since the cli is a module, it can be reused in a different project that accepts the same arguments.
 
 #### Helpers
 
-The helpers folder holds the some io helper functions that are general enough but still specific to this project.
+The helpers folder holds some io helper functions that are general enough to be called a helper function but still specific to this project.
 
-I believe these functions can be generalised even further.
+I believe these functions can be generalised even further/expanded into their own modules.
 
 #### ops
 
 This is where the business logic lives. The name of the folder is loosely related to the nature of the functions defined within this folder.
 
-Since the main purpose of this project is to process an excel file. I named the file containing the logic of dealing with the excel file `amag_op.py`.
+Since the main purpose of this project is to process an excel file, I named the file containing the logic of dealing with the excel file `amag_op.py`.
 
-The business logic is completely decoupled from the interface, all though some assumptions are made based on the shape of the arguments. The call_func function acts as the glue between the cli and the business logic.
+The business logic is completely decoupled from the interface, although some assumptions are made based on the shape of the arguments. The call_func function acts as the glue between the cli and the business logic.
 
 #### Exceptions
 
@@ -203,7 +203,7 @@ Here the custom exceptions are defined. It is useful to write custom exceptions 
 
 #### Tests
 
-here lives all of the tests. I used the `Pytest` Framework as it makes writing tests really easy.
+All of the tests live here. I used the `Pytest` Framework as it simplifies writing tests.
 The main benefits are the following:
 
 - Only needing to use assert in a test.
