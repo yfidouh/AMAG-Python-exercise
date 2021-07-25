@@ -1,21 +1,6 @@
 import argparse
 import sys
 
-from amag_op.helpers.amag_op import process
-from amag_op.helpers.ops import perform_op
-
-
-def call_func(args):
-    if args.func == "operate":
-        x = args.x
-        y = args.y
-        op = args.op
-        print(f"{op}({x}, {y}) = {perform_op(x, y, op)}")
-    elif args.func == "process":
-        filename = args.file.name
-        sheet = args.s
-        process(filename, sheet)
-
 
 def add_operate_subparser(subparsers):
     # parser for operating on two floats
@@ -36,6 +21,13 @@ def add_process_subparser(subparsers):
     parser_2.add_argument(
         "-s", "-sheet", type=str, default=None, help="Excel sheetname"
     )
+    parser_2.add_argument(
+        "-o",
+        "-output",
+        type=str,
+        default=None,
+        help="output file name, defaults to filename with _out suffix",
+    )
     parser_2.set_defaults(func="process")
 
 
@@ -54,8 +46,7 @@ def cli(args):
     else:
         # to display the script options when no arguments have been provided
         args = parser.parse_args(["--help"])
-    call_func(args)
-    # return args
+    return args
 
 
 if __name__ == "__main__":

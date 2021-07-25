@@ -37,3 +37,21 @@ def save_file(fname, df, sheet_name=None):
         # writer.save()
     else:
         raise FileTypeError(ext)
+
+
+def make_fname(fname, output_fname):
+    if output_fname:
+        ext = os.path.splitext(output_fname)[-1]
+        if ext not in [".xlsx", ".csv"]:
+            new_ext = os.path.splitext(fname)[-1]
+            output_fname += new_ext
+        new_fname = output_fname
+    else:
+        new_fname = ".".join(
+            fname.split(".")[:-2]
+            + [fname.split(".")[-2] + "_out." + fname.split(".")[-1]]
+        )
+    folder = os.path.dirname(new_fname)
+    if folder:
+        os.makedirs(folder, exist_ok=True)
+    return new_fname
